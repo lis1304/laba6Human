@@ -5,7 +5,7 @@ package lab6;
  */
 public class ButtonPhone implements Phone {
     @Override
-    public void call(int number) {
+    public void call(String number) {
         System.out.println("Звоним на номер " + number + " по кнопочному телефону");
     }
 }

@@ -36,9 +36,9 @@ public class Main {
 
         //звоним
         human1.setPhone(new ButtonPhone());
-        human1.getPhone().call(123456789);
+        human1.getPhone().call("123456789");
         human2.setPhone(new SmartPhone());
-        human2.getPhone().call(987654321);
+        human2.getPhone().call("987654321");
 
 
     }
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("~~~~~~~Отсортировано по возрасту~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-        Arrays.sort(humans);
+        Arrays.sort(humans, new SortedByHumanAge());
         for (Human human : humans){
             System.out.println(human);
         }
@@ -58,11 +58,14 @@ public class Main {
 
         System.out.println("~~~~~~~Отсортировано по ФИО~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
+        Arrays.sort(humans, new SortedByHumanFullName());
+/*
         Arrays.sort(humans, new Comparator<Human>() {
             public int compare(Human human1, Human human2) {
-                return human1.toString().compareTo(human2.toString());
+                return  human1.toString().compareTo(human2.toString());
             }
         });
+*/
         for (Human human : humans){
             System.out.println(human);
         }
@@ -73,7 +76,8 @@ public class Main {
 
         System.out.println("~~~~~~~~Отсортировано по адресу~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-        Arrays.sort(humans, (humanAddres1,humanAddres2) -> humanAddres1.getAddress().toString().compareTo(humanAddres2.getAddress().toString()));
+        //Arrays.sort(humans, (humanAddres1,humanAddres2) -> humanAddres1.getAddress().toString().compareTo(humanAddres2.getAddress().toString()));
+        Arrays.sort(humans, new SortedByHumanFullAddress());
         for (Human human : humans){
             System.out.println(human);
         }

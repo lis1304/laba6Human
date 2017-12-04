@@ -18,6 +18,10 @@ public class FullName{
         return firstName;
     }
 
+    public String getFullName() {
+        return lastName + " " + firstName + " " + patronymic;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

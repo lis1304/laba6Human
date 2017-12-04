@@ -19,6 +19,17 @@ public class Address {
         this.flat = flat;
     }
 
+
+    public String getFullAddress(){
+        return
+                "Страна:'" + country + '\'' +
+                        " Город:'" + town + '\'' +
+                        " Улица:'" + street + '\'' +
+                        " Дом №:" + house +
+                        " Квартира №:" + flat;
+
+    }
+
     public String getCountry() {
         return country;
     }

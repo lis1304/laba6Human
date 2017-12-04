@@ -3,7 +3,7 @@ package lab6;
 /**
  * Created by LIS on 27.11.2017.
  */
-public class Human implements Cloneable,Comparable<Human>{
+public class Human implements Cloneable{
     private FullName fullName;
     private int age;
     private Address address;
@@ -33,12 +33,12 @@ public class Human implements Cloneable,Comparable<Human>{
         this.gender = gender;
     }
 
-    public FullName getFullName() {
-        return fullName;
-    }
-
     public void setFullName(FullName fullName) {
         this.fullName = fullName;
+    }
+
+    public FullName getFullName() {
+        return fullName;
     }
 
     public int getAge() {
@@ -61,12 +61,13 @@ public class Human implements Cloneable,Comparable<Human>{
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
+/*
     @Override
     public int compareTo(Human o) {
-        return age - o.age;
-    }
+        return age > o.age ? 1 : age == o.age ? 0 : -1;
 
+    }
+*/
     @Override
     public String toString() {
         return "Human{" +
